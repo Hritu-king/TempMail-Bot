@@ -14,9 +14,9 @@ import os
 buttons=InlineKeyboardMarkup(
                              [
                              [
-            InlineKeyboardButton('Gᴇɴᴇʀᴀᴛᴇ', callback_data='generate'),
-            InlineKeyboardButton('Rᴇғʀᴇsʜ', callback_data='refresh')],[
-            InlineKeyboardButton('Cʟᴏsᴇ', callback_data='close')
+            InlineKeyboardButton('Gᴇɴᴇʀᴀᴛᴇ ♻️', callback_data='generate'),
+            InlineKeyboardButton('Rᴇғʀᴇsʜ 🔃', callback_data='refresh')],[
+            InlineKeyboardButton('Cʟᴏsᴇ ❌', callback_data='close')
                    ]
                              ])
 
