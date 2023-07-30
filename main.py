@@ -5,6 +5,9 @@ from pyrogram import *
 import requests as re
 from Config import *
 from pyrogram.types import InlineKeyboardButton,InlineKeyboardMarkup
+from pyrogram import Client, filters
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup 
+from pyrogram.errors import UserBannedInChannel, UserNotParticipant
 import wget
 import os 
 
@@ -32,9 +35,23 @@ app=Client('Temp-Mail Bot',
            bot_token=BOT_TOKEN)
 
 email=''
+@app.on_message(filters.text & filters.private & filters.incoming)
+async def fore(c, m):
+      try:
+        chat = await c.get_chat_member(-1001785446911, m.from_user.id)
+        if chat.status=="kicked":
+           await c.send_message(chat_id=m.chat.id, text="You are Banned ☹️\n\n📝 If u think this is an ERROR message in @MaxxBotChat", reply_to_message_id=m.id)
+           m.stop_propagation()
+      except UserBannedInChannel:
+         return await c.send_message(chat_id=m.chat.id, text="Hai you made a mistake so you are banned from channel so you are banned from me too 😜")
+      except UserNotParticipant:
+          button = [[InlineKeyboardButton('Updates Channel 🇮🇳', url='https://t.me/Private_Bots')]]
+          markup = InlineKeyboardMarkup(button)
+          return await c.send_message(chat_id=m.chat.id, text="""Hai bro,\n\nYou must join my channel for using me.\n\nPress this button to join now 👇""", reply_markup=markup)
+      m.continue_propagation()
 @app.on_message(filters.command('start'))
 async def start_msg(client,message):
-    await message.reply("**Hey "+message.from_user.first_name+" !!**\n @mysterymailbot is a free service that allows to generates and receive emails at a temporary address that self-destructed after a certain time elapses.\n\n**__ How It Safe's You??**__\n- Using the temporary mail allows you to completely protect your real mailbox against the loss of personal information. Your temporary e-mail address is completely anonymous. Your details: information about your person and users with whom you communicate, IP-address, e-mail address are protected and completely confidential.\n\nFurther Queris @riz4d🌚")
+    await message.reply("**Hey "+message.from_user.first_name+" !!**\n @Rand_MailBot is a free service that allows to generates and receive emails at a temporary address that self-destructed after a certain time elapses.\n\n**Further Queris @Prime_Hritu🌚**")
     await message.reply("**Generate a Email Now❕**",
                         reply_markup=buttons)
 @app.on_callback_query()
