@@ -23,8 +23,8 @@ buttons=InlineKeyboardMarkup(
 msg_buttons=InlineKeyboardMarkup(
                              [
                              [
-            InlineKeyboardButton('View message', callback_data='view_msg'),
-            InlineKeyboardButton('Close', callback_data='close')
+            InlineKeyboardButton('Vɪᴇᴡ Mᴇssᴀɢᴇ 👀', callback_data='view_msg'),
+            InlineKeyboardButton('Cʟᴏsᴇ ❌', callback_data='close')
                    ] 
                              ])
 
