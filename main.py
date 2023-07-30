@@ -14,10 +14,10 @@ import os
 buttons=InlineKeyboardMarkup(
                              [
                              [
-            InlineKeyboardButton('Generate', callback_data='generate'),
-            InlineKeyboardButton('Refresh', callback_data='refresh'),
-            InlineKeyboardButton('Close', callback_data='close')
-                   ] 
+            InlineKeyboardButton('Gᴇɴᴇʀᴀᴛᴇ', callback_data='generate'),
+            InlineKeyboardButton('Rᴇғʀᴇsʜ', callback_data='refresh')],[
+            InlineKeyboardButton('Cʟᴏsᴇ', callback_data='close')
+                   ]
                              ])
 
 msg_buttons=InlineKeyboardMarkup(
